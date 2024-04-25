@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+   <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+<body>
+    <h1>TO DO LIST</h1>
+    <form action="{{url_for('home')}}" class="input-container" method="POST">
+        <input type="text" placeholder="Enter" id="input-task" name="task_name">
+        <button id="add-task">ADD</button>
+    </form>
+    <h2> Tasks</h2>
+    <div class="task-container">
+        {% for item in items %}
+        <div class="task" >
+            <div class="action">
+                <form action="{{url_for('checked_task',task_id=item.id)}}" method="POST">
+                    <input type="checkbox" name="checked" class="tick" {% if item.checked%}checked{% endif %} onchange="this.form.submit()">
+                </form>
+            </div>
+            {% if not item.checked %}
+            <span style="background-color: #f87070; border-color: green;" >Not completed</span>
+            {% else %}
+            <span  style="background-color: #8cf19ddf;" >Completed </span> 
+            {% endif %}  
+            <p>{{item.name}}</p>
+            <div class="action">
+                <form action="{{url_for('delete_task',task_id=item.id)}}" method="POST">
+                    <button>DEL</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
