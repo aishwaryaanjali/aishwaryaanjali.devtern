@@ -1,0 +1,63 @@
+body{
+    font-family: cursive;
+    background-color:#e8f6f5df;
+}
+h1,h2{
+    text-align: center;
+}
+.input-container{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    gap:20px;
+}
+#input-task{
+    width:250px;
+    height:30px;
+    font-size:1.30rem;
+}
+#add-task{
+    height: 40px;
+    width:75px;
+    border-radius:5px;
+    background-color: #8cf19ddf;
+    color:green;
+    border-color: green;
+    font-size:1.40rem;
+    cursor: pointer;
+}
+.task-container{
+    width:80vw;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap :15px;
+}
+.task{
+
+    border-color: rgb(4, 135, 135);
+    background-color: #4eeadfdf;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border-radius: 15px;
+
+}
+.actions>form{
+    display: inline;
+}
+.action>form>button{
+    font-family: cursive;
+    background-color: #f87070;
+    color:#951212;
+    border-color:#951212;
+    border-radius: 7px;
+    font-size:1.25rem;
+    cursor: pointer;
+}
+
+.action>form>input.tick{
+    width:25px;
+    height:25px;
+}
